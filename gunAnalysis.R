@@ -1,6 +1,6 @@
 #Read the file
 getwd()
-dataSet = read.csv('~/Documents/Ecole/5A/AnalyseDonnees/gun-violence-data_01-2013_03-2018.csv',header = TRUE,',')
+dataSet = read.csv('./../gun-violence-data_01-2013_03-2018.csv',header = TRUE,',')
 
 #Describe file
 str(dataSet)
