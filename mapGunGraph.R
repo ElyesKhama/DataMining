@@ -1,7 +1,3 @@
-#Read the file
-getwd()
-dataSet = read.csv('/home/hamid/Téléchargements/gun-violence-data/gun-violence-data_01-2013_03-2018.csv',header = TRUE,',')
-#Describe file
 library(ggplot2)
 library(plyr)
 library(stringr)
