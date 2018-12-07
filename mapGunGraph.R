@@ -30,3 +30,21 @@ for(armUsed in dataSet$gun_type ){
 }
 mostUsed=as.data.frame(sort(table(Armes),TRUE)[1:5])
 ggplot(data=mostUsed, aes(x=Armes, y=Freq, fill=Armes)) + geom_bar(stat="identity")+ xlab("Type d'arme ") + ylab("Nombre de fois utilisée")
+################################################## Age #####################################################
+Ages=""
+for(ageUsed in dataSet$participant_age ){
+  elems <-unlist(str_split(ageUsed,"\\|\\|"))
+  for (value in elems) {
+    if (value=="") {}
+    else {
+      ages<-unlist(str_split(value,"[0-9]+::"))
+      for(age in ages)
+        if(age=="" || age=="0:Unknown"|| age=="Unknown"){}
+      else{
+        Ages=c(Ages,age)
+      }
+    }
+  }
+}
+mostUsed=as.data.frame(sort(table(Ages),TRUE)[1:14])
+ggplot(data=mostUsed, aes(x=Ages, y=Freq, fill=Ages)) + geom_bar(stat="identity")+ xlab("Age ") + ylab("Nombre de fois ")
